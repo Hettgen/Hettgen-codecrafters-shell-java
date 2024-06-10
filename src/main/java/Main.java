@@ -41,7 +41,7 @@ public class Main {
                     System.out.print(parameters[1] + " is" + commandList.get(parameters[1]) + "\n");
                 }
                 else{
-                    System.out.println("nonexistent: not found");
+                    System.out.print("nonexistent: not found" + "\n");
                 }
             }
 
