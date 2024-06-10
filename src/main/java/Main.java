@@ -23,15 +23,9 @@ public class Main {
             if(command.equals("echo")){
                 System.out.println(input.substring(input.indexOf(" ", 0)));
             }
-
-
-            if(input.substring(0, 4).equals("echo")){
-                System.out.println();
+            else{
+                System.out.println(input + ": command not found");
             }
-
-            System.out.println(input + ": command not found");
-
-            
 
         }
         
