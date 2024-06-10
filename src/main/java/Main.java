@@ -15,8 +15,18 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
 
-            if(input.equals("exit 0")){
+            String command = input.substring(0, input.indexOf(" ", 0));
+
+            if(command.equals("exit 0")){
                 System.exit(0);
+            }
+            if(command.equals("echo")){
+                System.out.println(input.substring(input.indexOf(" ", 0)));
+            }
+
+
+            if(input.substring(0, 4).equals("echo")){
+                System.out.println();
             }
 
             System.out.println(input + ": command not found");
