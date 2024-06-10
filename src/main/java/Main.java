@@ -9,8 +9,8 @@ public class Main {
 
         // Uncomment this block to pass the first stage
         HashMap<String, String> commandList = new HashMap<String, String>();
-        commandList.put("echo", " a shellbuiltin");
-        commandList.put("exit", " a shellbuiltin");
+        commandList.put("echo", " a shell builtin");
+        commandList.put("exit", " a shell builtin");
         commandList.put("cat", "/bin/cat");
 
         Scanner scanner = new Scanner(System.in);
@@ -28,12 +28,16 @@ public class Main {
 
             // }
 
+            if(commandList.get(parameters[0]) == null){
+                System.out.println(input + ": command not found");
+                continue;
+            }
+
             if(parameters[0].equals("type")){
                 if(commandList.get(parameters[1]) != null){
-                    System.out.println(parameters[1] + " is" + commandList.get(parameters[1]));
+                    System.out.print(parameters[1] + " is" + commandList.get(parameters[1]) + "\n");
                 }
             }
-            
 
             if(parameters[0].equals("exit")){
 
@@ -42,9 +46,6 @@ public class Main {
             }
             if(parameters[0].equals("echo")){
                 System.out.print(parameters[1] + "\n");
-            }
-            else{
-                System.out.println(input + ": command not found");
             }
 
         }
