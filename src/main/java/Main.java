@@ -12,6 +12,7 @@ public class Main {
         commandList.put("echo", " a shell builtin");
         commandList.put("exit", " a shell builtin");
         commandList.put("cat", "/bin/cat");
+        commandList.put("type", " a shell builtin");
 
         Scanner scanner = new Scanner(System.in);
         
