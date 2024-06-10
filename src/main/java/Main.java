@@ -15,7 +15,12 @@ public class Main {
             
             String input = scanner.nextLine();
 
-            String command = input.substring(0, input.indexOf(" ", 0));
+            String command = "";
+
+            if((input.indexOf(" ", 0) >= 0)){
+                command = input.substring(0, input.indexOf(" ", 0));
+            }
+            
 
             if(command.equals("exit 0")){
                 System.exit(0);
