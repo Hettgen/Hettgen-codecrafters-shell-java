@@ -7,12 +7,12 @@ public class Main {
         // System.out.println("Logs from your program will appear here!");
 
         // Uncomment this block to pass the first stage
-        
+        Scanner scanner = new Scanner(System.in);
         
 
         while(true){
             System.out.print("$ ");
-            Scanner scanner = new Scanner(System.in);
+            
             String input = scanner.nextLine();
 
             String command = input.substring(0, input.indexOf(" ", 0));
@@ -21,11 +21,10 @@ public class Main {
                 System.exit(0);
             }
             if(command.equals("echo")){
-                System.out.print(input.substring(command.length()) + "\n");
+                System.out.print(input.substring(command.length() + 1) + "\n");
             }
             else{
                 System.out.println(input + ": command not found");
-                System.exit(0);
             }
 
         }
