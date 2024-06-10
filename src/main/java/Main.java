@@ -17,19 +17,21 @@ public class Main {
 
             String command = "";
 
-            if((input.indexOf(" ", 0) >= 0)){
-                command = input.substring(0, input.indexOf(" ", 0));
-            }
-            else{
-                command = input;
-            }
+            String[] parameters = input.split(" ", 0);
+
+            // if((input.indexOf(" ", 0) >= 0)){
+            //     command = input.substring(0, input.indexOf(" ", 0));
+
+            // }
             
 
-            if(command.equals("exit 0")){
-                System.exit(0);
+            if(parameters[0].equals("exit")){
+
+
+                System.exit(Integer.valueOf(parameters[1]));
             }
-            if(command.equals("echo")){
-                System.out.print(input.substring(command.length() + 1) + "\n");
+            if(parameters[0].equals("echo")){
+                System.out.print(parameters[1]);
             }
             else{
                 System.out.println(input + ": command not found");
