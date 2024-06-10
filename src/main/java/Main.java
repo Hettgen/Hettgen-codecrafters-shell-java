@@ -31,7 +31,7 @@ public class Main {
                 System.exit(Integer.valueOf(parameters[1]));
             }
             if(parameters[0].equals("echo")){
-                System.out.print(parameters[1]);
+                System.out.print(parameters[1] + "\n");
             }
             else{
                 System.out.println(input + ": command not found");
