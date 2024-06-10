@@ -43,6 +43,7 @@ public class Main {
                 else{
                     System.out.print("nonexistentcommand: not found" + "\n");
                 }
+                continue;
             }
 
             if(parameters[0].equals("exit")){
@@ -52,6 +53,7 @@ public class Main {
             }
             if(parameters[0].equals("echo")){
                 System.out.print(parameters[1] + "\n");
+                continue;
             }
 
         }
