@@ -8,18 +8,21 @@ public class Main {
 
         // Uncomment this block to pass the first stage
         
-        System.out.print("$ ");
+        
 
         while(true){
-            
+            System.out.print("$ ");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
 
+            if(input.equals("exit 0")){
+                System.exit(0);
+            }
+
             System.out.println(input + ": command not found");
 
-            System.out.print("$ ");
+            
 
-            System.exit(0);
         }
         
         
