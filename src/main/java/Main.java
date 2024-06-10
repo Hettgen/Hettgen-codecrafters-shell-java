@@ -17,7 +17,7 @@ public class Main {
 
             String command = "";
 
-            String[] parameters = input.split(" ", 0);
+            String[] parameters = input.split(" ", 1);
 
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
