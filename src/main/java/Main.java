@@ -1,4 +1,5 @@
 // Uncomment this block to pass the first stage
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +8,11 @@ public class Main {
         // System.out.println("Logs from your program will appear here!");
 
         // Uncomment this block to pass the first stage
+        HashMap<String, String> commandList = new HashMap<String, String>();
+        commandList.put("echo", " a shellbuiltin");
+        commandList.put("exit", " a shellbuiltin");
+        commandList.put("cat", "/bin/cat");
+
         Scanner scanner = new Scanner(System.in);
         
 
@@ -15,14 +21,18 @@ public class Main {
             
             String input = scanner.nextLine();
 
-            String command = "";
-
             String[] parameters = input.split(" ", 2);
 
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
 
             // }
+
+            if(parameters[0].equals("type")){
+                if(commandList.get(parameters[1]) != null){
+                    System.out.println(parameters[1] + " is" + commandList.get(parameters[1]));
+                }
+            }
             
 
             if(parameters[0].equals("exit")){
