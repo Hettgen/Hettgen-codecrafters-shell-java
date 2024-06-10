@@ -11,7 +11,7 @@ public class Main {
         
 
         while(true){
-            System.out.println("$ ");
+            System.out.print("$ ");
             Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
 
