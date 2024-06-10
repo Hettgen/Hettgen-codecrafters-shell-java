@@ -16,6 +16,8 @@ public class Main {
             String input = scanner.nextLine();
 
             System.out.println(input + ": command not found");
+
+            System.exit(0);
         }
         
         
