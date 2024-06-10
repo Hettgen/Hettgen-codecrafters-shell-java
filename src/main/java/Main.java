@@ -28,15 +28,20 @@ public class Main {
             //     command = input.substring(0, input.indexOf(" ", 0));
 
             // }
-
+            
+            // if nonexistent command
             if(commandList.get(parameters[0]) == null){
                 System.out.println(input + ": command not found");
                 continue;
             }
 
+            // type command logic
             if(parameters[0].equals("type")){
                 if(commandList.get(parameters[1]) != null){
                     System.out.print(parameters[1] + " is" + commandList.get(parameters[1]) + "\n");
+                }
+                else{
+                    System.out.println("nonexistent: not found");
                 }
             }
 
