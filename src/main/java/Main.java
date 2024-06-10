@@ -21,7 +21,7 @@ public class Main {
                 System.exit(0);
             }
             if(command.equals("echo")){
-                System.out.println(input.substring(input.indexOf(" ", 0)+1));
+                System.out.println(input.substring(command.length()+1));
             }
             else{
                 System.out.println(input + ": command not found");
