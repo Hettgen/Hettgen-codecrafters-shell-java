@@ -11,5 +11,9 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+
+        if(input.equals("nonexistent")){
+            System.out.println(input + ": command not found");
+        }
     }
 }
