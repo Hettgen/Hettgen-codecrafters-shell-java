@@ -20,6 +20,9 @@ public class Main {
             if((input.indexOf(" ", 0) >= 0)){
                 command = input.substring(0, input.indexOf(" ", 0));
             }
+            else{
+                command = input;
+            }
             
 
             if(command.equals("exit 0")){
