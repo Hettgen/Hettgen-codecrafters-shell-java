@@ -1,11 +1,14 @@
 // Uncomment this block to pass the first stage
 import java.util.HashMap;
 import java.util.Scanner;
+import java.nio.file.Path;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         // You can use print statements as follows for debugging, they'll be visible when running tests.
         // System.out.println("Logs from your program will appear here!");
+
+        String[] paths = System.getenv("PATH").split(":");
 
         // Uncomment this block to pass the first stage
         HashMap<String, String> commandList = new HashMap<String, String>();
@@ -18,6 +21,11 @@ public class Main {
         
 
         while(true){
+
+            for (String string : paths) {
+                System.out.println(string);
+            }
+
             System.out.print("$ ");
             
             String input = scanner.nextLine();
@@ -39,6 +47,7 @@ public class Main {
             if(parameters[0].equals("type")){
                 if(commandList.get(parameters[1]) != null){
                     System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
+                    System.out.println();
                 }
                 else{
                     System.out.print(parameters[1] + ": not found" + "\n");
