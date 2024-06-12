@@ -48,7 +48,7 @@ public class Main {
 
                 // return if path does not contain command
                 if(pathLocation.equals("")){
-                    System.out.println(parameters[1] + ": not found" + "\n");
+                    System.out.println(parameters[1] + ": not found");
                 }
                 else{
                     System.out.println(parameters[1] + " is " + pathLocation);
