@@ -97,7 +97,7 @@ public class Main {
                         return string;
                     } 
                 }
-                index += command.length();
+                index ++;
             }
 
         }
