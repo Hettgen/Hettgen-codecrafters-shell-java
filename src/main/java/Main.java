@@ -92,8 +92,10 @@ public class Main {
             System.out.println(string + ": this is the path string");
             int index = 0;
             while(index <= string.length()){
+                
+                System.out.println(string.substring(index));
                 if(index + command.length() > string.length()){
-                    System.out.println(string.substring(index));
+                    
                     if(string.substring(index).equals(command)){
                         return string;
                     }
