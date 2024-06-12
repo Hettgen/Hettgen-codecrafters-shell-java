@@ -30,6 +30,8 @@ public class Main {
 
             String[] parameters = input.split(" ", 2);
 
+            System.out.println(parameters[0]);
+
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
 
