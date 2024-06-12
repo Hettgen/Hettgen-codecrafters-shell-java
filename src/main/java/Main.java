@@ -81,7 +81,7 @@ public class Main {
 
         for (String string : path) {
             
-            if(string.substring(string.length() - command.length()).equals(command))
+            if(string.substring(string.length() - command.length() -1).equals(command))
                 return string;
             // int index = 0;
             // while(index <= string.length()){
@@ -104,6 +104,5 @@ public class Main {
 
         }
         return "";
-
     }
 }
