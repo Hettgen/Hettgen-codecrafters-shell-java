@@ -91,7 +91,7 @@ public class Main {
             
 
             int index = 0;
-            while(index < string.length()){
+            while(index <= string.length() - command.length()){
                 if(string.substring(index, index + command.length()).equals(command)){
                     return string;
                 }
