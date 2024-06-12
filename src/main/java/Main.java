@@ -81,25 +81,26 @@ public class Main {
 
         for (String string : path) {
             
-            
-            int index = 0;
-            while(index <= string.length()){
+            if(string.substring(string.length() - command.length()).equals(command))
+                return string;
+            // int index = 0;
+            // while(index <= string.length()){
 
-                if(index + command.length() > string.length())
-                break;
+            //     if(index + command.length() > string.length())
+            //     break;
 
-                if(index + command.length() == string.length()){
-                    if(string.substring(index).equals(command)){
-                        return string;
-                    }
-                }
-                else{
-                    if(string.substring(index, index + command.length()).equals(command)){
-                        return string;
-                    } 
-                }
-                index ++;
-            }
+            //     if(index + command.length() == string.length()){
+            //         if(string.substring(index).equals(command)){
+            //             return string;
+            //         }
+            //     }
+            //     else{
+            //         if(string.substring(index, index + command.length()).equals(command)){
+            //             return string;
+            //         } 
+            //     }
+            //     index ++;
+            // }
 
         }
         return "";
