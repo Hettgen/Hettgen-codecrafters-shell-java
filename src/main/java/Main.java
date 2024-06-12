@@ -24,7 +24,7 @@ public class Main {
 
             
 
-            System.out.println("$ ");
+            System.out.print("$ ");
             
             String input = scanner.nextLine();
 
