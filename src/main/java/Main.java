@@ -43,18 +43,18 @@ public class Main {
                 continue;
             }
 
-            // type command logic
+            // TYPE command logic
             if(parameters[0].equals("type")){
 
                 String pathLocation = searchPath(paths, parameters[1]);
 
                 // return if path does not contain command
                 if(pathLocation.equals("")){
-                    System.out.println("reached in first case");
+
                     System.out.println(parameters[1] + ": not found");
                 }
                 else{
-                    System.out.println("reaced in else");
+
                     System.out.println(parameters[1] + " is " + pathLocation);
                 }
 
@@ -91,14 +91,20 @@ public class Main {
             
 
             int index = 0;
-            while(index <= string.length() - command.length()){
-                if(string.substring(index, index + command.length()).equals(command)){
-                    return string;
+            while(index <= string.length()){
+                if(index + command.length() > string.length()){
+                    if(string.substring(index).equals(command)){
+                        return string;
+                    }
+                }
+                else{
+                    if(string.substring(index, index + command.length()).equals(command)){
+                        return string;
+                    } 
                 }
                 index += command.length();
             }
 
-            
         }
         return "";
 
