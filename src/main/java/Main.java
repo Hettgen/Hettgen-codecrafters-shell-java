@@ -93,6 +93,7 @@ public class Main {
             int index = 0;
             while(index <= string.length()){
                 if(index + command.length() > string.length()){
+                    System.out.println(string.substring(index));
                     if(string.substring(index).equals(command)){
                         return string;
                     }
