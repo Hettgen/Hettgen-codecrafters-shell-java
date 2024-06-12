@@ -30,7 +30,7 @@ public class Main {
 
             String[] parameters = input.split(" ", 2);
 
-            System.out.println(parameters[0]);
+
 
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
@@ -50,9 +50,11 @@ public class Main {
 
                 // return if path does not contain command
                 if(pathLocation.equals("")){
+                    System.out.println("reached in first case");
                     System.out.println(parameters[1] + ": not found");
                 }
                 else{
+                    System.out.println("reaced in else");
                     System.out.println(parameters[1] + " is " + pathLocation);
                 }
 
