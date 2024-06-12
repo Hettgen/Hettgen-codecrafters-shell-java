@@ -22,9 +22,7 @@ public class Main {
 
         while(true){
 
-            for (String string : paths) {
-                System.out.println(string);
-            }
+            
 
             System.out.print("$ ");
             
@@ -45,19 +43,32 @@ public class Main {
 
             // type command logic
             if(parameters[0].equals("type")){
-                if(commandList.get(parameters[1]) != null){
-                    System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
-                    System.out.println();
+
+                String pathLocation = searchPath(paths, parameters[1]);
+
+                // return if path does not contain command
+                if(pathLocation.equals("")){
+                    System.out.println(parameters[1] + ": not found" + "\n");
                 }
                 else{
-                    System.out.print(parameters[1] + ": not found" + "\n");
+                    System.out.println(parameters[1] + " is " + pathLocation);
                 }
-                continue;
+
+
+
+                // if(commandList.get(parameters[1]) != null){
+
+
+                //     System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
+                //     System.out.println();
+                // }
+                // else{
+                //     System.out.print(parameters[1] + ": not found" + "\n");
+                // }
+                // continue;
             }
 
             if(parameters[0].equals("exit")){
-
-
                 System.exit(Integer.valueOf(parameters[1]));
             }
             if(parameters[0].equals("echo")){
@@ -68,5 +79,23 @@ public class Main {
         }
         
         
+    }
+
+    public static String searchPath(String[] path, String command){
+
+        for (String string : path) {
+            
+
+            int index = 0;
+            while(index < string.length()){
+                if(string.substring(index, index + command.length()).equals(command)){
+                    return string;
+                }
+            }
+
+            
+        }
+        return "";
+
     }
 }
