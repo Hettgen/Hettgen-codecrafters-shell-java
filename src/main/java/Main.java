@@ -55,11 +55,9 @@ public class Main {
                 }
                 else{
                     if(pathLocation.equals("")){
-
                         System.out.println(parameters[1] + ": not found");
                     }
                     else{
-
                         System.out.println(parameters[1] + " is " + pathLocation);
                     }
                 }
@@ -86,7 +84,7 @@ public class Main {
             
             int index = 0;
             while(index <= string.length()){
-                
+                System.out.println(string.substring(index));
 
                 if(index + command.length() > string.length()){
                     
