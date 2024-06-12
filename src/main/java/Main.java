@@ -95,6 +95,7 @@ public class Main {
                 if(string.substring(index, index + command.length()).equals(command)){
                     return string;
                 }
+                index += command.length();
             }
 
             
