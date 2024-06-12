@@ -48,24 +48,32 @@ public class Main {
 
                 String pathLocation = searchPath(paths, parameters[1]);
 
-                // return if path does not contain command
-                if(pathLocation.equals("")){
+                if(commandList.get(parameters[1]) != null){
 
-                    System.out.println(parameters[1] + ": not found");
+
+                    System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
                 }
                 else{
+                    if(pathLocation.equals("")){
 
-                    System.out.println(parameters[1] + " is " + pathLocation);
+                        System.out.println(parameters[1] + ": not found");
+                    }
+                    else{
+
+                        System.out.println(parameters[1] + " is " + pathLocation);
+                    }
                 }
 
+                
 
 
-                // if(commandList.get(parameters[1]) != null){
+
+                if(commandList.get(parameters[1]) != null){
 
 
-                //     System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
-                //     System.out.println();
-                // }
+                    System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
+                    System.out.println();
+                }
                 // else{
                 //     System.out.print(parameters[1] + ": not found" + "\n");
                 // }
@@ -89,11 +97,11 @@ public class Main {
 
         for (String string : path) {
             
-            System.out.println(string + ": this is the path string");
+            
             int index = 0;
             while(index <= string.length()){
                 
-                System.out.println(string.substring(index));
+
                 if(index + command.length() > string.length()){
                     
                     if(string.substring(index).equals(command)){
