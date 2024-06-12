@@ -72,7 +72,6 @@ public class Main {
 
 
                     System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
-                    System.out.println();
                 }
                 // else{
                 //     System.out.print(parameters[1] + ": not found" + "\n");
