@@ -89,7 +89,7 @@ public class Main {
 
         for (String string : path) {
             
-
+            System.out.println(string + ": this is the path string");
             int index = 0;
             while(index <= string.length()){
                 if(index + command.length() > string.length()){
