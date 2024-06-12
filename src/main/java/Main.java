@@ -63,20 +63,7 @@ public class Main {
                         System.out.println(parameters[1] + " is " + pathLocation);
                     }
                 }
-
-                
-
-
-
-                if(commandList.get(parameters[1]) != null){
-
-
-                    System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
-                }
-                // else{
-                //     System.out.print(parameters[1] + ": not found" + "\n");
-                // }
-                // continue;
+                continue;
             }
 
             if(parameters[0].equals("exit")){
