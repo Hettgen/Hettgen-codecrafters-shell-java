@@ -85,6 +85,10 @@ public class Main {
 
             String[] allFiles = getFiles(string);
 
+            if(allFiles == null){
+                return "";
+            }
+
 
             // System.out.println(string.substring(string.lastIndexOf("/")+1));
 
@@ -100,6 +104,10 @@ public class Main {
     public static String[] getFiles(String dir){
         
         File[] files = new File(dir).listFiles();
+
+        if(files == null){
+            return null;
+        }
 
         String[] allFiles = new String[files.length];
 
