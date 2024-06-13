@@ -74,15 +74,14 @@ public class Main {
 
         }
         
-        
     }
 
     public static String searchPath(String[] path, String command){
 
         for (String string : path) {
 
-
-            // System.out.println(string.substring(string.lastIndexOf("/")+1));
+            
+            System.out.println(string.substring(string.lastIndexOf("/")+1));
             if(string.substring(string.lastIndexOf("/")+1).equals(command))
                 return string;
             
