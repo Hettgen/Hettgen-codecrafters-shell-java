@@ -132,10 +132,13 @@ public class Main {
     } 
 
 
-    public static void executeExternal(String command){
+    public static void executeExternal(String command, String parameter){
         try {
-            Runtime run = Runtime.getRuntime();
-            Process proc = run.exec(command);
+            Process process = new ProcessBuilder(command, parameter).start();
+
+
+            // Runtime run = Runtime.getRuntime();
+            // Process proc = run.exec(command, parameter);
         } catch (IOException e) {
             e.printStackTrace();
         }
