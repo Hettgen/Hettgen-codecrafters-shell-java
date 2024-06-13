@@ -15,10 +15,10 @@ public class Main {
 
         // Uncomment this block to pass the first stage
         HashMap<String, String> commandList = new HashMap<String, String>();
-        commandList.put("echo", " a shell builtin");
-        commandList.put("exit", " a shell builtin");
+        commandList.put("echo", "a shell builtin");
+        commandList.put("exit", "a shell builtin");
         commandList.put("cat", "/bin/cat");
-        commandList.put("type", " a shell builtin");
+        commandList.put("type", "a shell builtin");
 
         Scanner scanner = new Scanner(System.in);
         
