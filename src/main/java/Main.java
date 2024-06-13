@@ -37,9 +37,12 @@ public class Main {
             String[] parameters = input.split(" ", 2);
 
             String command = parameters[0];
+            String condition = "";
+            if(parameters.length > 1){
+                condition = parameters[1];
+            }
 
-            String condition = parameters[1];
-
+            
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
 
