@@ -83,10 +83,11 @@ public class Main {
 
         for (String string : path) {
 
+
             String[] allFiles = getFiles(string);
 
             if(allFiles == null){
-                return "";
+                continue;
             }
 
 
