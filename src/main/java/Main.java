@@ -48,7 +48,7 @@ public class Main {
 
                 String commandPath = searchPath(paths, command);
 
-                System.out.println("reaching in not current list");
+                System.out.println(commandPath);
 
                 // search path for entered command and execute
                 if(commandPath != ""){
