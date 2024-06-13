@@ -3,8 +3,10 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Path;
 
 public class Main {
@@ -136,13 +138,22 @@ public class Main {
 
     public static void executeExternal(String command, String parameter){
         try {
+
+            // Process proc = run.exec(command, parameter);
+            // Runtime run = Runtime.getRuntime();
             Process process = new ProcessBuilder(command, parameter).start();
 
+            BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while((line = in.readLine()) != null){
+                System.out.println(line);
+            }
+            process.waitFor();
+            in.close();
 
-            // Runtime run = Runtime.getRuntime();
-            // Process proc = run.exec(command, parameter);
-        } catch (IOException e) {
+            
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        }
+        } 
     }
 }
