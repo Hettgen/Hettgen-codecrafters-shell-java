@@ -50,7 +50,7 @@ public class Main {
 
                 // search path for entered command and execute
                 if(commandPath != null){
-                    executeExternal(commandPath);
+                    executeExternal(commandPath, condition);
                 }
                 else{
                     System.out.println(input + ": command not found");
