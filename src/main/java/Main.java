@@ -95,7 +95,7 @@ public class Main {
 
             for(int i = 0; i < allFiles.length; i++){
                 if(allFiles[i].equals(command))
-                    return string;
+                    return string + "/" + command;
             }
             
         }
