@@ -81,8 +81,12 @@ public class Main {
 
         for (String string : path) {
             
-            if(string.substring(string.length() - command.length() + 1).equals(command))
-                return string;
+            String[] directories = string.split("/", 0);
+
+            for (String string2 : directories) {
+                if(string2.equals(command))
+                    return string;
+            }
             // int index = 0;
             // while(index <= string.length()){
 
