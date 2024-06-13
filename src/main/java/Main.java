@@ -1,6 +1,9 @@
 // Uncomment this block to pass the first stage
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.io.File;
 import java.nio.file.Path;
 
 public class Main {
@@ -80,31 +83,30 @@ public class Main {
 
         for (String string : path) {
 
-            
+            String[] allFiles = getFiles(string);
+
+
             // System.out.println(string.substring(string.lastIndexOf("/")+1));
-            if(string.substring(string.lastIndexOf("/")+1).equals(command))
-                return string;
+
+            for(int i = 0; i < allFiles.length; i++){
+                if(allFiles[i].equals(command))
+                    return string;
+            }
             
-            // int index = 0;
-            // while(index <= string.length()){
-
-            //     if(index + command.length() > string.length())
-            //     break;
-
-            //     if(index + command.length() == string.length()){
-            //         if(string.substring(index).equals(command)){
-            //             return string;
-            //         }
-            //     }
-            //     else{
-            //         if(string.substring(index, index + command.length()).equals(command)){
-            //             return string;
-            //         } 
-            //     }
-            //     index ++;
-            // }
-
         }
         return "";
     }
+
+    public static String[] getFiles(String dir){
+        
+        File[] files = new File(dir).listFiles();
+
+        String[] allFiles = new String[files.length];
+
+        for(int i = 0; i < allFiles.length; i++){
+            allFiles[i] = files[i].getName();
+        }
+
+        return allFiles;
+    } 
 }
