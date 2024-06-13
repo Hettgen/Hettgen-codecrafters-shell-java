@@ -49,7 +49,7 @@ public class Main {
                 String commandPath = searchPath(paths, command);
 
                 // search path for entered command and execute
-                if(commandPath != null){
+                if(commandPath != ""){
                     executeExternal(commandPath, condition);
                 }
                 else{
