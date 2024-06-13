@@ -80,13 +80,10 @@ public class Main {
     public static String searchPath(String[] path, String command){
 
         for (String string : path) {
-            
-            String[] directories = string.split("/", 0);
 
-            for (String string2 : directories) {
-                if(string2.equals(command))
-                    return string;
-            }
+            if(string.substring(string.lastIndexOf("/")+1).equals(command))
+                return string;
+            
             // int index = 0;
             // while(index <= string.length()){
 
