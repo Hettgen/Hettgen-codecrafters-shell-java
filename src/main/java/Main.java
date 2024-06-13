@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 
 public class Main {
@@ -33,45 +34,56 @@ public class Main {
 
             String[] parameters = input.split(" ", 2);
 
+            String command = parameters[0];
 
+            String condition = parameters[1];
 
             // if((input.indexOf(" ", 0) >= 0)){
             //     command = input.substring(0, input.indexOf(" ", 0));
 
             // }
             
-            // if nonexistent command
+            // if command not in current list
             if(commandList.get(parameters[0]) == null){
-                System.out.println(input + ": command not found");
+
+                String commandPath = searchPath(paths, command);
+
+                // search path for entered command and execute
+                if(commandPath != null){
+                    executeExternal(commandPath);
+                }
+                else{
+                    System.out.println(input + ": command not found");
+                }
                 continue;
             }
 
             // TYPE command logic
             if(parameters[0].equals("type")){
 
-                String pathLocation = searchPath(paths, parameters[1]);
+                String pathLocation = searchPath(paths, condition);
 
-                if(commandList.get(parameters[1]) != null){
+                if(commandList.get(condition) != null){
 
 
-                    System.out.print(parameters[1] + " is " + commandList.get(parameters[1]) + "\n");
+                    System.out.print(condition + " is " + commandList.get(condition) + "\n");
                 }
                 else{
                     if(pathLocation.equals("")){
-                        System.out.println(parameters[1] + ": not found");
+                        System.out.println(condition + ": not found");
                     }
                     else{
-                        System.out.println(parameters[1] + " is " + pathLocation);
+                        System.out.println(condition + " is " + pathLocation);
                     }
                 }
                 continue;
             }
 
             if(parameters[0].equals("exit")){
-                System.exit(Integer.valueOf(parameters[1]));
+                System.exit(Integer.valueOf(condition));
             }
             if(parameters[0].equals("echo")){
-                System.out.print(parameters[1] + "\n");
+                System.out.print(condition + "\n");
                 continue;
             }
 
@@ -118,4 +130,14 @@ public class Main {
 
         return allFiles;
     } 
+
+
+    public static void executeExternal(String command){
+        try {
+            Runtime run = Runtime.getRuntime();
+            Process proc = run.exec(command);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
