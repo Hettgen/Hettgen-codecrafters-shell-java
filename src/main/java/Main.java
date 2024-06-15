@@ -22,6 +22,7 @@ public class Main {
         commandList.put("exit", "a shell builtin");
         commandList.put("cat", "/bin/cat");
         commandList.put("type", "a shell builtin");
+        commandList.put("pwd", "a shell builtin");
 
         Scanner scanner = new Scanner(System.in);
         
@@ -63,8 +64,13 @@ public class Main {
                 continue;
             }
 
-            // TYPE command logic
-            if(parameters[0].equals("type")){
+            // PWD command
+            if(command.equals("pwd")){
+                System.out.println(getWorkingDirectory());
+            }
+
+            // TYPE command
+            if(command.equals("type")){
 
                 String pathLocation = searchPath(paths, condition);
 
@@ -84,9 +90,11 @@ public class Main {
                 continue;
             }
 
+            // EXIT command
             if(parameters[0].equals("exit")){
                 System.exit(Integer.valueOf(condition));
             }
+            // ECHO command
             if(parameters[0].equals("echo")){
                 System.out.print(condition + "\n");
                 continue;
@@ -134,7 +142,33 @@ public class Main {
         }
 
         return allFiles;
-    } 
+    }
+
+    public static String getWorkingDirectory(){
+        return  System.getProperty("user.dir");
+    }
+
+    // Logic for CD
+    public static boolean changeWorkingDirectory(String parameter){
+
+        String userDir = System.getProperty("user.dir");
+
+        if(userDir != null){
+            
+        }
+
+        if(parameter.equals("./"))
+        System.setProperty("user.dir", "");
+
+        File directory = new File(parameter).getAbsoluteFile();
+        boolean result = false;
+
+        if(directory.exists() || directory.mkdirs())
+            result = (System.setProperty("user.dir", directory.getAbsolutePath()) != null);
+        
+        return result;
+
+    }
 
 
     public static void executeExternal(String command, String parameter){
@@ -157,4 +191,6 @@ public class Main {
             e.printStackTrace();
         } 
     }
+
+
 }
