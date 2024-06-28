@@ -59,7 +59,7 @@ public class Main {
                     executeExternal(commandPath, condition);
                 }
                 else{
-                    System.out.println(input + ": command not found");
+                    System.out.println(command + ": command not found");
                 }
                 continue;
             }
@@ -67,6 +67,13 @@ public class Main {
             // PWD command
             if(command.equals("pwd")){
                 System.out.println(getWorkingDirectory());
+            }
+            // CD command
+            if(command.equals("cd")){
+                boolean result = changeWorkingDirectory(condition);
+                if(!result)
+                    System.out.print("Directory not found");
+                
             }
 
             // TYPE command
@@ -167,7 +174,7 @@ public class Main {
 
         
 
-        if(parameter.substring(0,2).equals("./")){
+        if(parameter.substring(0,2).equals("./") && parameter.length() > 2){
             String[] currentFiles = getFiles(parameter);
 
             for(int i = 0; i < currentFiles.length; i++){
@@ -175,18 +182,18 @@ public class Main {
             }
         }
         else{
-
+            
         }
 
 
         File directory = new File(parameter).getAbsoluteFile();
         boolean result = false;
 
-        if(directory.exists() || directory.mkdirs())
+//  || directory.mkdirs()
+        if(directory.exists())
             result = (System.setProperty("user.dir", directory.getAbsolutePath()) != null);
         
         return result;
-
     }
 
 
