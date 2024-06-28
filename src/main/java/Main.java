@@ -73,7 +73,7 @@ public class Main {
             if(command.equals("cd")){
                 boolean result = changeWorkingDirectory(condition);
                 if(!result)
-                    System.out.print("Directory not found");
+                    System.out.println(input + ": No such file or directory");
                 
             }
 
