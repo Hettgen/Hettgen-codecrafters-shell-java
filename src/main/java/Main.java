@@ -153,12 +153,31 @@ public class Main {
 
         String userDir = System.getProperty("user.dir");
 
-        if(userDir != null){
-            
+        // Handling relative paths
+
+        if(parameter.equals("../")){
+            System.setProperty("user.dir", userDir.substring(0, userDir.lastIndexOf("/")));
+            return true;
+        }
+        
+
+        if(parameter.equals("./")){
+            return true;
         }
 
-        if(parameter.equals("./"))
-        System.setProperty("user.dir", "");
+        
+
+        if(parameter.substring(0,2).equals("./")){
+            String[] currentFiles = getFiles(parameter);
+
+            for(int i = 0; i < currentFiles.length; i++){
+                
+            }
+        }
+        else{
+
+        }
+
 
         File directory = new File(parameter).getAbsoluteFile();
         boolean result = false;
