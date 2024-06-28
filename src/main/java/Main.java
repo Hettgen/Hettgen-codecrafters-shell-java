@@ -23,6 +23,7 @@ public class Main {
         commandList.put("cat", "/bin/cat");
         commandList.put("type", "a shell builtin");
         commandList.put("pwd", "a shell builtin");
+        commandList.put("cd", "a shell builtin");
 
         Scanner scanner = new Scanner(System.in);
         
