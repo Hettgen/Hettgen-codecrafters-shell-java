@@ -16,6 +16,7 @@ public class Main {
         // System.out.println("Logs from your program will appear here!");
 
         String[] paths = System.getenv("PATH").split(":");
+        
 
         // Uncomment this block to pass the first stage
         HashMap<String, String> commandList = new HashMap<String, String>();
@@ -166,6 +167,8 @@ public class Main {
         // Checking if absolute path
         if(parameter.charAt(0) == '/')
             directory = new File(parameter).getAbsoluteFile();
+        if(parameter.charAt(0) == '~' && parameter.length()==1)
+            directory = new File(System.getenv("home"));
         
         // Handling relative paths
         else{
