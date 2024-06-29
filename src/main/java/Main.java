@@ -169,8 +169,7 @@ public class Main {
             directory = new File(parameter).getAbsoluteFile();
 
         else if(parameter.charAt(0) == '~' && parameter.length()==1){
-            directory = new File(System.getProperty("user.home"));
-            System.out.println(System.getenv("HOME"));
+            directory = new File(System.getenv("HOME"));
         }
         // Handling relative paths
         else{
