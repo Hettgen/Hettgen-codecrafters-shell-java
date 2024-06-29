@@ -160,39 +160,23 @@ public class Main {
     public static boolean changeWorkingDirectory(String parameter){
 
         String userDir = System.getProperty("user.dir");
-
+        File directory;
+        
+        // Checking if absolute path
+        if(parameter.charAt(0) == '/')
+            directory = new File(parameter).getAbsoluteFile();
+        
         // Handling relative paths
-
-        if(parameter.equals("../")){
-            System.setProperty("user.dir", userDir.substring(0, userDir.lastIndexOf("/")));
-            return true;
-        }
+        else
+            directory = new File(userDir + "/" + parameter).getAbsoluteFile();
+        
         
 
-        if(parameter.equals("./")){
-            return true;
-        }
-
-        
-
-        if(parameter.substring(0,2).equals("./") && parameter.length() > 2){
-            String[] currentFiles = getFiles(parameter);
-
-            for(int i = 0; i < currentFiles.length; i++){
-                
-            }
-        }
-        else{
-            
-        }
-
-
-        File directory = new File(parameter).getAbsoluteFile();
         boolean result = false;
 
-//  || directory.mkdirs()
+        //  || directory.mkdirs()
         if(directory.exists())
-            result = (System.setProperty("user.dir", directory.getAbsolutePath()) != null);
+        result = (System.setProperty("user.dir", directory.getAbsolutePath()) != null);
         
         return result;
     }
