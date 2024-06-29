@@ -168,9 +168,10 @@ public class Main {
         if(parameter.charAt(0) == '/')
             directory = new File(parameter).getAbsoluteFile();
 
-        else if(parameter.charAt(0) == '~' && parameter.length()==1)
+        else if(parameter.charAt(0) == '~' && parameter.length()==1){
             directory = new File(System.getProperty("user.home"));
-        
+            System.out.println(System.getProperty("user.home"));
+        }
         // Handling relative paths
         else{
             Path path = Paths.get(userDir + "/" + parameter).normalize();
