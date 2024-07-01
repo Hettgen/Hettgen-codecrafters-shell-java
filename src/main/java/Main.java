@@ -167,10 +167,10 @@ public class Main {
         // Checking if absolute path
         if(parameter.charAt(0) == '/')
             directory = new File(parameter).getAbsoluteFile();
-
-        else if(parameter.charAt(0) == '~' && parameter.length()==1){
+        // Handling home dir
+        else if(parameter.charAt(0) == '~' && parameter.length()==1)
             directory = new File(System.getenv("HOME"));
-        }
+        
         // Handling relative paths
         else{
             Path path = Paths.get(userDir + "/" + parameter).normalize();
